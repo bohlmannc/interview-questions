@@ -1,10 +1,10 @@
 def max_profit(array):
 
-    def go(i, curr_min, profit):
+    def go(i, prev_min, profit):
         if i == len(array):
             return profit
         else:
-            curr_min = min(array[i], curr_min)
+            curr_min = min(array[i], prev_min)
             curr_max = max(array[i] - curr_min, profit)
             return go(i + 1, curr_min, curr_max)
 
